@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
+import screenBreakpoints from '@/helpers/screenBreakpoints';
 import PrimaryNavbar from '@/components/Header/PrimaryNavbar/PrimaryNavbar';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -25,9 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		"
 				>
 					{/* <ScrollToTop /> */}
-					<PrimaryNavbar
-						className={`px-4 m-auto lg:max-w-[1024px] xl:max-w-[1280px]`}
-					/>
+					<PrimaryNavbar className={`px-4 m-auto ${screenBreakpoints}`} />
 
 					<main className="">{children}</main>
 				</div>
