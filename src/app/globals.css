@@ -31,6 +31,6 @@ html {
 	overflow: hidden;
 }
 
-.active {
+.secondary-navbar.active {
 	@apply border-b-[3px] border-accent-100;
 }
