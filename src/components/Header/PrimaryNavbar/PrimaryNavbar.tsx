@@ -1,5 +1,7 @@
 'use client';
 
+import IconExit from '@/components/Icons/IconExit';
+import IconSearch from '@/components/Icons/IconSearch';
 import React, { useState } from 'react';
 
 export default function PrimaryNavbar({ className }: { className?: string }) {
@@ -81,11 +83,7 @@ export default function PrimaryNavbar({ className }: { className?: string }) {
 							</form>
 							<button className="w-[40px]" onClick={toggleSearchBar}>
 								<div className="w-[15px]">
-									<img
-										src="./icon-search-exit-white.svg"
-										alt="exit search"
-										className="w-full h-full"
-									/>
+									<IconExit className="" />
 								</div>
 							</button>
 						</div>
@@ -95,7 +93,7 @@ export default function PrimaryNavbar({ className }: { className?: string }) {
 						onClick={toggleSearchBar}
 					>
 						<div className="w-[20px]">
-							<img src="./icon-search-white.svg" alt="Search movie" />
+							<IconSearch className="stroke-neutral" />
 						</div>
 					</button>
 				</div>
@@ -125,10 +123,7 @@ export default function PrimaryNavbar({ className }: { className?: string }) {
 						/>
 						<button className=" text-secondary-200 h-full w-[70px] border-[none] grid place-items-center">
 							<div className="w-[20px]">
-								<img
-									src="./icon-search-grey.svg"
-									alt="Search movie"
-								/>
+								<IconSearch className="stroke-secondary-300" />
 							</div>
 						</button>
 					</form>
