@@ -18,12 +18,13 @@ export default async function getMovies() {
 
 	if (!response[0].ok) {
 		console.log(response);
-		return {
-			message:
-				'Something went wrong with the API request, could not fetch Popular movies. Please visit another list or try again later.',
-			statusMessage: 'INTERNAL SERVER ERROR',
-			status: 500,
-		};
+		throw new Error('Error fetching mobies');
+		// {
+		// 	message:
+		// 		'Something went wrong with the API request, could not fetch Popular movies. Please visit another list or try again later.',
+		// 	statusMessage: 'INTERNAL SERVER ERROR',
+		// 	status: 500,
+		// }
 	} else {
 		const pageOne = await response[0].json();
 		const pageTwo = await response[1].json();

@@ -3,6 +3,7 @@ export interface IMoviesList {
 	results: IMovie[];
 	total_pages: number;
 	total_results: number;
+	[key: string]: any;
 }
 
 export interface IMovie {
