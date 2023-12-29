@@ -1,3 +1,26 @@
+import { IMovieCard } from './IMovieCard';
+
+export interface IMovieDetailsFiltered {
+	id: number;
+	title: string;
+	rating: string;
+	image: string | null;
+	backdrop: string | null;
+	releaseDate: string;
+	language: string;
+	description: string;
+	genres: Genre[];
+	runtime: number;
+	status: string;
+	tagline: string | null;
+	similarMovies: IMovieCard[] | null;
+	trailer: {
+		youtubeLink: string;
+		youtubeId: string;
+	} | null;
+	credits: { casts: Cast[]; directors: Cast[]; writers: Cast[] } | null;
+}
+
 export interface IMovieDetials {
 	adult: boolean;
 	backdrop_path: string | null;
@@ -7,7 +30,7 @@ export interface IMovieDetials {
 	homepage: string | null;
 	id: number;
 	imdb_id: string;
-	original_language: string | null;
+	original_language: string;
 	original_title: string | null;
 	overview: string;
 	popularity: number;

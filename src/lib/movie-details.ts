@@ -7,6 +7,8 @@ import {
 	IMovieDetialsVideos,
 } from '@/interfaces/IMovieDetails';
 
+import filterMovieData from '@/helpers/filterMovieData';
+
 export default async function getMovieDetails(movieId: string) {
 	const response = await Promise.all([
 		fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options),
@@ -27,19 +29,19 @@ export default async function getMovieDetails(movieId: string) {
 		// 	statusMessage: 'BAD REQUEST',
 		//     status: 400}
 	} else {
-		const movieDetails = await response[0].json();
-		const movieCredits = await response[1].json();
-		const movieSimilars = await response[2].json();
-		const movieVideos = await response[3].json();
+		const movieDetails = (await response[0].json()) as IMovieDetials;
+		const movieCredits = (await response[1].json()) as IMovieDetialsCredits;
+		const movieSimilars = (await response[2].json()) as IMovieDetialsSimilar;
+		const movieVideos = (await response[3].json()) as IMovieDetialsVideos;
 
-		// const filteredMovieData = await filterMovieData(
-		// 	movieDetails,
-		// 	movieCredits,
-		// 	movieSimilars,
-		// 	movieVideos
-		// );
+		const filteredMovieData = await filterMovieData(
+			movieDetails,
+			movieCredits,
+			movieSimilars,
+			movieVideos
+		);
 
 		// console.log(filteredMovieData);
-		// return filteredMovieData;
+		return filteredMovieData;
 	}
 }
