@@ -5,6 +5,9 @@ import Image from 'next/image';
 
 import { IMovieCard } from '@/interfaces/IMovieCard';
 
+import IconStarFilled from '@/components/Icons/IconStarFill';
+import IconStarOutline from '@/components/Icons/IconStarOutline';
+
 const MovieCard: FC<IMovieCard> = ({
 	id,
 	rating,
@@ -46,25 +49,19 @@ const MovieCard: FC<IMovieCard> = ({
 						mt-[4px] 
 						xl:mt-[3px]"
 						>
-							<img
-								src="./icons/icon-rating-star-red-14.svg"
-								alt={`${title}'s rating is ${rating}`}
-							/>
+							<IconStarFilled className="text-accent-100" />
 						</span>
 						<span className="ml-[6px] text-secondary-400">{rating}</span>
 					</div>
 					<div
 						className="grid h-[28px] w-[40px] px-[12px] ml-[8px] 
 					
-					pt-[4px]
+					pt-[6px]
 					xl:pt-[3px] 
 					
 					hover:cursor-pointer hover:bg-secondary-100 rounded"
 					>
-						<img
-							src="./icons/icon-rating-star-blue-14.svg"
-							alt={`${title}'s rating is ${rating}`}
-						/>
+						<IconStarOutline className="stroke-accent-200" />
 					</div>
 				</div>
 
