@@ -8,6 +8,7 @@ import { IMovieCard } from '@/interfaces/IMovieCard';
 import IconStarFilled from '@/components/Icons/IconStarFill';
 import IconStarOutline from '@/components/Icons/IconStarOutline';
 import IconDot from '@/components/Icons/IconDot';
+import IconPlus from '@/components/Icons/IconPlus';
 
 const MovieCard: FC<IMovieCard> = ({
 	id,
@@ -102,10 +103,7 @@ const MovieCard: FC<IMovieCard> = ({
 						w-[12px]
 						xl:w-[16px]"
 						>
-							<img
-								src="./icons/icon-add-href-watchlist-blue.svg"
-								alt="Add href watchlist"
-							/>
+							<IconPlus className="w-full h-full text-accent-200" />
 						</span>
 						<span
 							className="font-medium tracking-wider
