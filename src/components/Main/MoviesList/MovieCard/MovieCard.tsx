@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { IMovieCard } from '@/interfaces/IMovieCard';
 
@@ -27,9 +28,14 @@ const MovieCard: FC<IMovieCard> = ({
 				<div
 					className="
 					aspect-poster 
-				w-full hover:cursor-pointer hover:brightness-90"
+				w-full hover:cursor-pointer hover:brightness-90 relative"
 				>
-					<img src={image} alt={title} className="w-full object-cover" />
+					<Image
+						fill
+						src={image}
+						alt={title}
+						className="w-full object-cover"
+					/>
 				</div>
 			</Link>
 			<div className="mt-[18px] mb-[10px] mx-[10px] flex flex-col">
@@ -41,7 +47,7 @@ const MovieCard: FC<IMovieCard> = ({
 						xl:mt-[3px]"
 						>
 							<img
-								src="./icon-rating-star-red-14.svg"
+								src="./icons/icon-rating-star-red-14.svg"
 								alt={`${title}'s rating is ${rating}`}
 							/>
 						</span>
@@ -56,7 +62,7 @@ const MovieCard: FC<IMovieCard> = ({
 					hover:cursor-pointer hover:bg-secondary-100 rounded"
 					>
 						<img
-							src="./icon-rating-star-blue-14.svg"
+							src="./icons/icon-rating-star-blue-14.svg"
 							alt={`${title}'s rating is ${rating}`}
 						/>
 					</div>
@@ -81,11 +87,11 @@ const MovieCard: FC<IMovieCard> = ({
 				<div className="mt-[12px] flex self-center font-light text-xs tracking-wider">
 					<span className="">{releaseYear}</span>
 					<span className="font-black mx-[6px] grid place-items-center">
-						<img src="./icon-dot-4.svg" alt={`${title} details`} />
+						<img src="./icons/icon-dot-4.svg" alt={`${title} details`} />
 					</span>
 					<span className="">{language.toUpperCase()}</span>
 					<span className="font-black mx-[6px] grid place-items-center">
-						<img src="./icon-dot-4.svg" alt={`${title} details`} />
+						<img src="./icons/icon-dot-4.svg" alt={`${title} details`} />
 					</span>
 					<span className="">Movie</span>
 				</div>
@@ -99,7 +105,7 @@ const MovieCard: FC<IMovieCard> = ({
 						xl:w-[16px]"
 						>
 							<img
-								src="./icon-add-href-watchlist-blue.svg"
+								src="./icons/icon-add-href-watchlist-blue.svg"
 								alt="Add href watchlist"
 							/>
 						</span>
