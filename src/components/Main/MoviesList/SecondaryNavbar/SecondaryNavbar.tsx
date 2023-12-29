@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from 'react';
 
 import { useRouter } from 'next/router';
@@ -10,15 +12,15 @@ const navLinkClasses =
 
 export default function SecondaryNavbar() {
 	// Target the currently active link to be able to transition to it into view when secondary navbar becomes scrollable on smaller screen sizes
-	// useEffect(() => {
-	// 	const currActiveLink = document.querySelector('ul a.active');
+	useEffect(() => {
+		const currActiveLink = document.querySelector('ul a.active')!;
 
-	// 	currActiveLink.scrollIntoView({
-	// 		behavior: 'smooth',
-	// 		inline: 'nearest',
-	// 		block: 'end',
-	// 	});
-	// }, []);
+		currActiveLink.scrollIntoView({
+			behavior: 'smooth',
+			inline: 'nearest',
+			block: 'end',
+		});
+	}, []);
 
 	const routes: Array<{ title: string; path: string }> = [
 		{ title: 'POPULAR', path: '/popular' },
@@ -42,18 +44,6 @@ export default function SecondaryNavbar() {
 					</NavLink>
 				);
 			})}
-			{/* <Link href="/popular" className={navLinkClasses}>
-				POPULAR
-			</Link>
-			<Link href="/top-rated" className={navLinkClasses}>
-				TOP RATED
-			</Link>
-			<Link href="/now-playing" className={navLinkClasses}>
-				NOW PLAYING
-			</Link>
-			<Link href="/upcoming" className={navLinkClasses}>
-				UPCOMING
-			</Link> */}
 		</ul>
 	);
 }
