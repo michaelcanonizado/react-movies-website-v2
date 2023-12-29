@@ -7,6 +7,7 @@ import { IMovieCard } from '@/interfaces/IMovieCard';
 
 import IconStarFilled from '@/components/Icons/IconStarFill';
 import IconStarOutline from '@/components/Icons/IconStarOutline';
+import IconDot from '@/components/Icons/IconDot';
 
 const MovieCard: FC<IMovieCard> = ({
 	id,
@@ -84,11 +85,11 @@ const MovieCard: FC<IMovieCard> = ({
 				<div className="mt-[12px] flex self-center font-light text-xs tracking-wider">
 					<span className="">{releaseYear}</span>
 					<span className="font-black mx-[6px] grid place-items-center">
-						<img src="./icons/icon-dot-4.svg" alt={`${title} details`} />
+						<IconDot className="" />
 					</span>
 					<span className="">{language.toUpperCase()}</span>
 					<span className="font-black mx-[6px] grid place-items-center">
-						<img src="./icons/icon-dot-4.svg" alt={`${title} details`} />
+						<IconDot className="" />
 					</span>
 					<span className="">Movie</span>
 				</div>
