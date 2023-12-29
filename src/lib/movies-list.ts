@@ -1,17 +1,17 @@
 import { options } from '@/config/tmdbconfig';
 
-import { IMovie } from '@/interfaces/IMoviesList';
+import { IMovie, EList } from '@/interfaces/IMoviesList';
 
 import filterMoviesData from '@/helpers/filterMoviesData';
 
-export default async function getMovies() {
+export default async function getMovies(type: EList) {
 	const response = await Promise.all([
 		fetch(
-			'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
+			`https://api.themoviedb.org/3/movie/${type}?language=en-US&page=1`,
 			options
 		),
 		fetch(
-			'https://api.themoviedb.org/3/movie/popular?language=en-US&page=2',
+			`https://api.themoviedb.org/3/movie/${type}?language=en-US&page=2`,
 			options
 		),
 	]);

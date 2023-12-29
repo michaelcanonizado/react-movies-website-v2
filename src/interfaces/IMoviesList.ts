@@ -1,3 +1,10 @@
+export enum EList {
+	popular = 'popular',
+	topRated = 'top_rated',
+	nowPlaying = 'now_playing',
+	upcoming = 'upcoming',
+}
+
 export interface IMoviesList {
 	page: number;
 	results: IMovie[];
